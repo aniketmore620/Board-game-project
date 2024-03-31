@@ -18,15 +18,16 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn package --file pom.xml
       
-    - uses: actions/upload-artifact@v4.3.1
+    - uses: actions/upload-artifact@v4
       with:
         name: Boardgame
         path: target/*.jar
+        
     - name: Trivy file scan
       run: |
-        trivy fs scan --format table -o trivy-fs-report.html .
+        trivy fs --format table -o trivy-fs-report.html .
        
     - name: sonarqube scan 
       uses: SonarSource/sonarqube-scan-action@master
