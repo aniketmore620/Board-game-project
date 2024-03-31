@@ -26,7 +26,7 @@ jobs:
         path: target/*.jar
     - name: Trivy file scan
       run: |
-       trivy fs scan --format table -o trivy-fs-report.html .
+        trivy fs scan --format table -o trivy-fs-report.html .
        
     - name: sonarqube scan 
       uses: SonarSource/sonarqube-scan-action@master
