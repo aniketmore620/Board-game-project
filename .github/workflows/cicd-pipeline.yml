@@ -58,7 +58,7 @@ jobs:
 
     - name: Trivy docker image scan
       run: |
-       trivy image --format table -o trivy-fs-report.html docker build -t moreaniket/boardgame:latest 
+       trivy image --format table -o trivy-fs-report.html moreaniket/boardgame:latest 
 
     - name: Docker Login
       uses: docker/login-action@v3
