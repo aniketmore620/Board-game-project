@@ -54,7 +54,7 @@ jobs:
 
     - name: building docker image
       run: |
-        docker build -t moreaniket/boardgame:latest
+        docker build -t moreaniket/boardgame:latest .
 
     - name: Trivy docker image scan
       run: |
